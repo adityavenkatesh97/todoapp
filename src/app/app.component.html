@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="header">
+    <h1>My {{title}}</h1>
+    <input type="text" #data placeholder="Input your task"  (keypress)="onkeyEnter($event,data)">
+    <!-- <button (click)="add(data)" >Add</button> -->
+  </div>
+  <div class="list">
+    <ul class="todo-list"></ul>
+    <li *ngFor="let data of datas" [ngClass]="check(data)">{{data}} <span class="close" (click)="delete(data)">X</span></li>
+    
+  </div>
+</div>
